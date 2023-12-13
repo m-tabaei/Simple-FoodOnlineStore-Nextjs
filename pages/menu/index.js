@@ -7,11 +7,11 @@ function Menu({ data }) {
 export default Menu;
 
 export async function getStaticProps() {
-  const res = await fetch("https://api-storge-menu.vercel.app/data");
+  const res = await fetch(`${process.env.BASE_URL}/data`);
   const data = await res.json();
   console.log(data);
   return {
     props: { data },
-    revalidate: 10,
+    revalidate: +process.env.REVALIDATE,
   };
 }

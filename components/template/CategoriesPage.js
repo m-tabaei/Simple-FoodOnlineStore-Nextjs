@@ -22,7 +22,7 @@ function CategoriesPage({ data }) {
   const searchHandler = () => {
     router.push({
       pathname: "/categories",
-      query : query,
+      query: query,
     });
   };
 
